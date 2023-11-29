@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class GoodStringsCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the length of the string: ");
+        int length = scanner.nextInt();
+
+        System.out.print("Enter the characters allowed in the string: ");
+        String allowedCharacters = scanner.next();
+
+        System.out.println("Number of ways to build good strings: " + countGoodStrings(length, allowedCharacters));
+    }
+
+    private static int countGoodStrings(int length, String allowedCharacters) {
+        int numWays = (int) Math.pow(allowedCharacters.length(), length);
+        return numWays;
+    }
+}
